@@ -10,25 +10,25 @@ from setuptools import setup
 
 version = re.search(
     '^__version__\s*=\s*"(.*)"',
-    open('bootstrap/bootstrap.py').read(),
+    open('clearmkvcnames/clearmkvcnames.py').read(),
     re.M
     ).group(1)
 
 
-with open("README.rst", "rb") as f:
-    long_descr = f.read().decode("utf-8")
+# with open("README.rst", "rb") as f:
+#     long_descr = f.read().decode("utf-8")
 
 
 setup(
-    name = "cmdline-bootstrap",
-    packages = ["bootstrap"],
+    name = "clear-mkvcnames",
+    packages = ["clearmkvcnames"],
     entry_points = {
-        "console_scripts": ['bootstrap = bootstrap.bootstrap:main']
+        "console_scripts": ['clear-mkvcnames = clearmkvcnames.clearmkvcnames:main']
         },
     version = version,
-    description = "Python command line application bare bones template.",
-    long_description = long_descr,
-    author = "Jan-Philip Gehrcke",
-    author_email = "jgehrcke@googlemail.com",
-    url = "http://gehrcke.de/2014/02/distributing-a-python-command-line-application",
+    description = "This command-line tool clears the chapter names defined in an MKV file.",
+    long_description = "This command-line tool clears the chapter names defined in an MKV file.",
+    author = "Joe Arauzo",
+    author_email = "joe@arauzo.net",
+    url = "https://github.com/JoeArauzo/clear-mkvcnames",
     )
